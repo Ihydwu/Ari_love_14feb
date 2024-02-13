@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <link href="./style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h1 class="header_text">Аришь, ты любишь меня?</h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://i.postimg.cc/CKfWDG6j/first.gif">
+            </div>
+            <div class="buttons">
+                <a href="./happy_ari.html">
+                    <button class="btn" id="yesButton" onclick="nextPage()">Да</button>
+                </a>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">Нет</button>
+                <script>
+                    function nextPage() {
+                        window.location.href = "love_ari.html";
+                    }
+
+                    function moveButton() {
+                        var x = Math.random() * (window.innerWidth - 100);
+                        var y = Math.random() * (window.innerHeight - 100);
+                        if (x > 2400) {
+                            var x = 2400
+                        }
+                        if (y > 7400) {
+                            var y = 7400
+                        }
+                        document.getElementById('noButton').style.margin = `0px`;
+                        document.getElementById('noButton').style.margin = `0px`;
+                        document.getElementById('noButton').style.left = `${x}px`;
+                        document.getElementById('noButton').style.top = `${y}px`;
+                        console.log(document.getElementById('noButton').offsetHeight)
+                        console.log(document.getElementById('noButton').offsetWidth)
+                    }
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
